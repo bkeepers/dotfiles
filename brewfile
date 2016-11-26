@@ -1,0 +1,8 @@
+# CLI tool that moves files or folder to the trash
+brew 'trash'
+
+# For signing git commits
+brew 'gpg'
+brew 'keybase'
+brew 'gpg-agent'
+brew 'pinentry-mac'
