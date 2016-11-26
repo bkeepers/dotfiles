@@ -1,0 +1,7 @@
+UserKnownHostsFile /Volumes/Secure/.ssh/known_hosts
+IdentityFile /Volumes/Secure/.ssh/id_dsa
+
+Host *github.com, *github.net
+  User bkeepers
+  IdentityFile /Volumes/Secure/.ssh/github_dsa
+  ForwardAgent yes
