@@ -12,7 +12,6 @@ alias bo="bundle open"
 alias h="heroku"
 alias rake='noglob rake'
 alias rspec="nocorrect rspec"
-alias dbundle='ruby -I ~/sandbox/bundler/lib ~/sandbox/bundler/bin/bundle'
 alias sb="./script/bootstrap"
 
 # rails 3 shortcut 'r'
