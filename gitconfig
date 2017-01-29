@@ -70,8 +70,7 @@
 	autosetuprebase = always
   autosetupmerge = true
 [core]
-	excludesfile = /Users/brandon/.gitignore
-	attributesfile = /Users/brandon/.gitattributes
+	excludesfile = ~/.gitignore
 	autocrlf = false
 [help]
 	autocorrect = 1

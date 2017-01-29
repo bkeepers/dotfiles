@@ -4,3 +4,4 @@ scratch.md
 .DS_Store
 *.sublime-project
 *.sublime-workspace
+tmp
