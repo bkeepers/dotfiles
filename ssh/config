@@ -1,5 +1,6 @@
 UserKnownHostsFile /Volumes/Secure/ssh/known_hosts
 IdentityFile /Volumes/Secure/ssh/id_dsa
+AuthorizedKeysFile /Volumes/Secure/ssh/authorized_keys
 
 Host *github.com, *github.net
   User bkeepers
