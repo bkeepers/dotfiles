@@ -29,7 +29,7 @@ for file in *; do
   ln -sf $PWD/$file ~/.$file
 done
 
-
+echo -e "\n\nBacked up old dotfiles to $backup"
 
 if [ ! -d ~/.keyboard ]; then
   git clone https://github.com/bkeepers/keyboard.git ~/.keyboard
