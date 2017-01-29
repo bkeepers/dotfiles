@@ -48,5 +48,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 # added by travis gem
-[ -f /Users/brandon/.travis/travis.sh ] && source /Users/brandon/.travis/travis.sh
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
+
 export PATH=bin:~/.bin:$PATH
