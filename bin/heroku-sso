@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+heroku accounts:set personal
+heroku accounts:remove work
+HEROKU_ORGANIZATION=github-enterprise heroku accounts:add work --sso
+heroku accounts:set work
