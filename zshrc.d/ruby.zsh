@@ -33,6 +33,8 @@ ss () {
     ./script/server $@
   elif [ -f ./bin/rails ]; then
     ./bin/rails s $@
+  elif [ -f ./package.json ]; then
+    npm start $@
   else
     ./script/rails s $@
   fi
