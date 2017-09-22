@@ -4,14 +4,12 @@
 	signingkey = D5FACBF6
 	email = bkeepers@github.com
 [alias]
+	# Shortcuts
 	co = checkout
 	st = status
 	ci = commit
 	br = branch
 	cp = cherry-pick
-
-	# Always prune remote branches when fetching
-	fetch = fetch -p
 
 	# Amend the last commit
 	amend = commit --amend -C HEAD
@@ -46,11 +44,6 @@
 
 	# Create a commit before wiping changes so they are saved in the reflog
 	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
-
-	# Disable commit signing on stash
-	stash = !echo "WTF?"
-
-
 
 [apply]
 	whitespace = nowarn
@@ -92,4 +85,8 @@
 	smudge = git lfs smudge %f
 	required = true
 [commit]
+	# Always sign commits
 	gpgsign = true
+[fetch]
+	# Always prune remote branches when fetching
+	prune = true
