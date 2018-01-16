@@ -2,7 +2,7 @@
 
 set -e
 
-heroku accounts:set personal
-heroku accounts:remove work
+heroku accounts:set personal || true
+heroku accounts:remove work || true
 HEROKU_ORGANIZATION=github-enterprise heroku accounts:add work --sso
 heroku accounts:set work
