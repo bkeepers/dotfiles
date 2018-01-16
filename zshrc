@@ -51,4 +51,4 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
-export PATH=bin:~/.bin:$PATH
+export PATH=bin:~/.bin:node_modules/.bin:$PATH
