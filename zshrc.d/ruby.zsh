@@ -12,40 +12,6 @@ alias bo="bundle open"
 alias h="heroku"
 alias rake='noglob rake'
 alias rspec="nocorrect rspec"
-alias sb="./script/bootstrap"
 
 # rails 3 shortcut 'r'
 alias r='rails'
-
-# launching console/server
-sc () {
-  if [ -f ./script/console ]; then
-    ./script/console $@
-  elif [ -f ./bin/rails ]; then
-    ./bin/rails c $@
-  else
-    ./script/rails c $@
-  fi
-}
-
-ss () {
-  if [ -f ./script/server ]; then
-    ./script/server $@
-  elif [ -f ./bin/rails ]; then
-    ./bin/rails s $@
-  elif [ -f ./package.json ]; then
-    npm start $@
-  else
-    ./script/rails s $@
-  fi
-}
-
-sg () {
-  if [ -f ./script/generate ]; then
-    ./script/generate $@
-  elif [ -f ./bin/rails ]; then
-    ./bin/rails g $@
-  else
-    ./script/rails g $@
-  fi
-}

@@ -38,3 +38,8 @@ if [ ! -d ~/.keyboard ]; then
   git co setup
   script/setup
 fi
+
+if [ ! -d ~/.strappydoo ]; then
+  git clone https://github.com/bkeepers/strappydoo.git ~/.strappydoo
+  ~/.strappydoo/script/install
+fi
