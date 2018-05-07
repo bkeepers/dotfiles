@@ -2,6 +2,9 @@
 
 require 'openssl'
 require 'jwt'  # https://rubygems.org/gems/jwt
+require 'dotenv'
+
+Dotenv.load()
 
 id = ENV['APP_ID'] || abort('Missing APP_ID environment variable')
 key = Dir.glob('*.pem')[0] || abort('Could not find *.pem file')
