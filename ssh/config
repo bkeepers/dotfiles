@@ -1,8 +1,21 @@
 UserKnownHostsFile /Volumes/Secure/ssh/known_hosts
 IdentityFile /Volumes/Secure/ssh/id_dsa
-AuthorizedKeysFile /Volumes/Secure/ssh/authorized_keys
 
-Host *github.com, *github.net
+Host *
+ AddKeysToAgent yes
+ UseKeychain yes
+ IdentityFile /Volumes/Secure/ssh/id_dsa
+
+Host bastion*.githubapp.com vault-bastion*.githubapp.com
+  AddKeysToAgent yes
+  UseKeychain yes
   User bkeepers
-  IdentityFile /Volumes/Secure/ssh/github_dsa
+  IdentityFile /Volumes/Secure/ssh/github_rsa
   ForwardAgent yes
+
+Host github.com *.github.net *.githubapp.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  User bkeepers
+  IdentityFile /Volumes/Secure/ssh/github_rsa
+  ForwardAgent no
