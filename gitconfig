@@ -30,9 +30,6 @@
 	#
 	fixup = !sh -c 'REV=$(git rev-parse $1) && git commit --fixup $@ && git rebase -i --autosquash $REV^' -
 
-	# Delete local branches that have been merged into the current branch
-	merged = !sh -c 'git branch --merged HEAD | grep -v $(git rev-parse --abbrev-ref HEAD) | grep -v master | xargs git branch -d'
-
 	# Show a graph of commits and merges
 	graph = log --decorate --oneline --graph
 

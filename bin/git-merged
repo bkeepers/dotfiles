@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Delete local branches that have been merged into master
+git branch --merged HEAD | grep -v $(git rev-parse --abbrev-ref HEAD) | grep -v master | xargs git branch -d
+
+# Delete local branches whose upstream has been removed
+# https://gist.github.com/nzroller/d325a87b88f03601ff55c5b19ffe1490
+git branch -vv | grep ' gone' | cut -d' ' -f1-3 | xargs -I {} git branch -D {}
