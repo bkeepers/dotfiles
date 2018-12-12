@@ -87,3 +87,5 @@
 [fetch]
 	# Always prune remote branches when fetching
 	prune = true
+[protocol]
+	version = 2
