@@ -1,3 +1,4 @@
 *.gpg*
 .gpg-agent-info
 random_seed
+tofu.db
