@@ -4,9 +4,14 @@ tap "caskroom/cask"
 brew 'trash'
 
 # For signing git commits
-brew 'gpg'
-brew 'gpg-agent'
+#brew 'gpg'
+#brew 'gpg-agent'
 brew 'pinentry-mac'
 brew 'hub'
 
 cask 'keybase'
+cask '1Password'
+cask 'Dropbox'
+cask 'bartender'
+cask 'google-chrome'
+cask 'Spotify'
