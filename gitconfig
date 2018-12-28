@@ -1,8 +1,7 @@
 [user]
 	name = Brandon Keepers
 	email = brandon@opensoul.org
-	signingkey = D5FACBF6
-	email = bkeepers@github.com
+	signingkey = 8D0FEA39C68144D34D5F1CCDF9533396D5FACBF6
 [alias]
 	# Shortcuts
 	co = checkout
@@ -87,5 +86,5 @@
 [fetch]
 	# Always prune remote branches when fetching
 	prune = true
-[protocol]
-	version = 2
+# [protocol]
+#	version = 2
