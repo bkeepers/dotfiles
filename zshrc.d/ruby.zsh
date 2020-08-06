@@ -4,14 +4,18 @@
 # export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 # export RUBY_GC_MALLOC_LIMIT=79000000
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 alias ge="gem edit"
-alias bx="nocorrect bundle exec"
+alias bx="bundle exec"
 alias bo="bundle open"
 alias h="heroku"
-alias rake='noglob rake'
-alias rspec="nocorrect rspec"
+# alias rake='noglob rake'
+# alias rspec="nocorrect rspec"
 
 # rails 3 shortcut 'r'
 alias r='rails'
+
+export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/ruby/lib"
+export CPPFLAGS="-I/usr/local/opt/ruby/include"
+export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"

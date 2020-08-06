@@ -17,3 +17,5 @@ alias sb="strappy bootstrap"
 alias sc="strappy console"
 alias ss="strappy server"
 alias st="strappy test"
+
+alias xcode="open -a Xcode ."

@@ -31,7 +31,7 @@ ZSH_THEME="refined"
 # DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
@@ -41,7 +41,7 @@ ZSH_THEME="refined"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bundler encode64 gpg-agent npm)
+plugins=(git bundler encode64 gpg-agent npm iterm2 command-not-found dotenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -49,6 +49,11 @@ source $ZSH/oh-my-zsh.sh
 
 # added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export PATH=bin:~/.bin:node_modules/.bin:$PATH
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+. /usr/local/opt/asdf/asdf.sh
