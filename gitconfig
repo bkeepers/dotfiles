@@ -1,7 +1,7 @@
 [user]
 	name = Brandon Keepers
 	email = brandon@opensoul.org
-	signingkey = 8D0FEA39C68144D34D5F1CCDF9533396D5FACBF6
+  signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCuC8bjdOXEDS6DKqidy2yuVquxQEzsypKUhDQdp1dWO1RzO/rTRDh07D/nIbNCUOZRctRLYu9qllg/bIVAaWL45NV2f1m1Khn6KXD+DMwEKUom2YMBNhrVjLgjwvXHzOkDC5lj8pBpSouPXK/xPOt+W3VrCSYOkP5NKWsUFi/W2P67nSOeVmZay+X39xz+k04HME9IB7pjo/dB1P0iiS1MYBiapdpl5Mkhu5NMe4eHWV4qeyrM55m3H7LmgGPIsUAawZ6uCclxk2AxiIRlVde4eMU3o5+MPrn5Q7xoGtqzmKurL6przhVGoFQg+PhJCvWn8j6n1kmJTlItUybaRqOuCcosXchtZYF6wD/b8J1hN1Bll5M7D0FKltIIYZ1VIbVLg5KnKlvp1HUmQIERDw+MEjHDHiartW3dGbRXZUPhyq+cWylskzKYFCVGKd1vSKqXYPKudiFWQvT3qC/+OThJ+WGbwkGiKIy4S373AfIUpVrTuNbYWbAk73gQAnoURm/h+9ASgVwhLpJlMRn7qVu8XddHMnGWl/l5cyUAdfFzDNik1wA73Or65SuYZ1doiyihDPXDl7j7Ys5H6CjYcDJrtITNE4Vi2dT1ig2B1SukVcfI3l4R/aOOOGxDd99ONnMqiG0Vhtmyl7eUpMmDF/139+Fr1lbzrH26id706LAHpw==
 [alias]
 	# Shortcuts
 	co = checkout
@@ -36,10 +36,11 @@
 	ec = config --global -e
 
 	# List Recent Branches
-	recent = for-each-ref --count=5 --sort=-committerdate --format='%(refname:short)' refs/heads/
+	recent = for-each-ref --count=10 --sort=-committerdate --format='%(refname:short)' refs/heads/
 
 	# Create a commit before wiping changes so they are saved in the reflog
 	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+	pristine = !git reset --hard && git clean -dffx
 
 [apply]
 	whitespace = nowarn
@@ -50,9 +51,9 @@
 	interactive = auto
 	ui = true
 [push]
-	default = simple
+	default = current
 [merge]
-	tool = opendiff
+	tool = vscode
 	summary = true
 	defaultToUpstream = true
 [branch]
@@ -88,3 +89,13 @@
 	prune = true
 # [protocol]
 #	version = 2
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"

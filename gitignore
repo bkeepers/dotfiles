@@ -1,7 +1,9 @@
 # Global ignores
 
 scratch.md
+/mytodo.md
 .DS_Store
 *.sublime-project
 *.sublime-workspace
 tmp
+vendor
