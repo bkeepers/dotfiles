@@ -1,12 +1,12 @@
-export EDITOR='atom -w'
-export BUNDLER_EDITOR='atom'
+export EDITOR='code -w'
+export BUNDLER_EDITOR='code'
 
 alias rm=trash
 alias grep='GREP_COLOR="1;37;41" LANG=C grep --color=auto'
 alias git=hub
-alias dotfiles="atom ~/.dotfiles"
+alias dotfiles="code ~/.dotfiles"
 
-e () { atom "${1:-.}"; }
+e () { code "${1:-.}"; }
 
 function server() {
   port=${1:-8000}

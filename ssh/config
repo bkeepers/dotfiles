@@ -1,21 +1,11 @@
 UserKnownHostsFile /Volumes/Secure/ssh/known_hosts
-IdentityFile /Volumes/Secure/ssh/id_dsa
 
 Host *
- AddKeysToAgent yes
- UseKeychain yes
- IdentityFile /Volumes/Secure/ssh/id_dsa
-
-Host bastion*.githubapp.com vault-bastion*.githubapp.com
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
   AddKeysToAgent yes
   UseKeychain yes
-  User bkeepers
   IdentityFile /Volumes/Secure/ssh/github_rsa
+
+Host pi.local
+  User pi
   ForwardAgent yes
-
-Host github.com *.github.net *.githubapp.com
-  AddKeysToAgent yes
-  UseKeychain yes
-  User bkeepers
-  IdentityFile /Volumes/Secure/ssh/github_rsa
-  ForwardAgent no

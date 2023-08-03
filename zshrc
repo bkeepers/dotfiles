@@ -41,19 +41,22 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bundler encode64 gpg-agent npm iterm2 command-not-found dotenv)
+plugins=(asdf git bundler encode64 gpg-agent npm iterm2 command-not-found)
 
+# Add homebrew to path
+export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
+
+# Homebrew completion
+FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+# Keep this last
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-# added by travis gem
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+# Add python to path
+export PATH="$PATH:$(brew --prefix)/opt/python/libexec/bin"
 
-if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export PATH="$HOME/.bin:$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:bin:node_modules/.bin"
 
-export PATH=bin:~/.bin:node_modules/.bin:$PATH
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-. /usr/local/opt/asdf/asdf.sh
+test -d "$HOME/.tea" && source <("$HOME/.tea/tea.xyz/v*/bin/tea" --magic=zsh --silent)
