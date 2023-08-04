@@ -1,17 +1,16 @@
-tap "caskroom/cask"
+tap "homebrew/cask"
 
 # CLI tool that moves files or folder to the trash
 brew 'trash'
 
 # For signing git commits
-#brew 'gpg'
-#brew 'gpg-agent'
+brew 'gpg'
+brew 'gpg-agent'
 brew 'pinentry-mac'
 brew 'hub'
 
 cask '1password'
 cask 'bartender'
-cask 'dropbox'
 cask 'google-chrome'
 cask 'sketch'
 cask 'spotify'
