@@ -1,7 +1,3 @@
 #!/bin/sh
 
-# Tell iTerm2 to use iCloud
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/Library/Mobile Documents/com~apple~CloudDocs/iTerm2"
-
-# Tell iTerm2 to use the custom preferences in the directory
-defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+~/Documents/dotfiles/script/setup
